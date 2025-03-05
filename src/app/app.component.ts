@@ -54,6 +54,66 @@ export class AppComponent implements OnInit {
         'All the above',
       ],
     },
+    {
+      id: 5,
+      question: 'What is HTML?',
+      answer: [
+        'Hyper Test Markup Language',
+        'Hyper Text Markdown Language',
+        'Hyper Text Markup Language',
+        'None of the above',
+      ],
+    },
+    {
+      id: 6,
+      question: 'What is CSS?',
+      answer: [
+        'Casgrading Style Sheet',
+        'Cascading Style Sheet',
+        'Casting Style Sheet',
+        'None of the above',
+      ],
+    },
+    {
+      id: 7,
+      question: 'What is SEO?',
+      answer: [
+        'Search Engine Operation',
+        'Search Engine Organization',
+        'Search Engine Optimization',
+        'None of the above',
+      ],
+    },
+    {
+      id: 8,
+      question: 'What is WWW?',
+      answer: [
+        'Wide World Web',
+        'Web World Wide',
+        'World Web Wide',
+        'World Wide Web',
+      ],
+    },
+    {
+      id: 9,
+      question: 'What is React?',
+      answer: [
+        'A Framework',
+        'A Programming Language',
+        'A Library',
+        'All the above',
+      ],
+    },
+    {
+      id: 10,
+      question: 'What is SQL?',
+      answer: [
+        'Structural Quantum Language',
+        'Space Query Link',
+        'Structured Query Language',
+        'None of the above',
+      ],
+    },
   ];
 
   pages: number[] = [];
@@ -95,7 +155,7 @@ export class AppComponent implements OnInit {
         this.defaultTime--;
       } else {
         clearInterval(this.timer);
-        alert('Time is up, move to next question');
+        alert('Time is up, Click "NEXT" to move to the next question');
       }
     }, 1000);
   }

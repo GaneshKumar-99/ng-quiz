@@ -1,8 +1,8 @@
 <div class="container-fulid bg-dark-subtle">
   <div class="container bg-secondary-subtle" style="height: 100vh">
-    <div class="h5 p-3">Quiz App</div>
+    <div class="h5 p-2">Quiz App</div>
     <hr />
-    <div class="text-center display-6">Asp.Net Quiz</div>
+    <div class="text-center display-6">Programming Quiz</div>
     <hr />
     <div class="d-flex flex-row">
       <div class="me-auto">
@@ -22,7 +22,7 @@
     </div>
     <div>
       <div class="row p-3 bg-light m-2">
-        <ul *ngFor="let ans of questions[currentPage - 1].answer">
+        <ul *ngFor="let ans of questions[currentPage - 1].answer" class="list-unstyled">
           <li>
             <input type="radio" name="answer" id="answer" [value]="ans" />
             {{ ans }}
@@ -33,7 +33,7 @@
 
     <hr />
 
-    <div class="text-center">
+    <!-- <div class="text-center">
       <button class="btn btn-outline-dark m-1" (click)="firstPage()">
         First
       </button>
@@ -46,7 +46,7 @@
       <button class="btn btn-outline-dark m-1" (click)="lastPage()">
         Last
       </button>
-    </div>
+    </div> -->
 
     <div class="">
       <ul class="p-4 pagination list-unstyled justify-content-center">
