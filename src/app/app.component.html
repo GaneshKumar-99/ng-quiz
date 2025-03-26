@@ -22,9 +22,12 @@
     </div>
     <div>
       <div class="row p-3 bg-light m-2">
-        <ul *ngFor="let ans of questions[currentPage - 1].answer" class="list-unstyled">
+        <ul
+          *ngFor="let ans of questions[currentPage - 1].answer"
+          class="list-unstyled"
+        >
           <li>
-            <input type="radio" name="answer" id="answer" [value]="ans" />
+            <input type="radio" name="answer-{{ currentPage }}" [(ngModel)]="selectedAnswer[currentPage]" [value]="ans" />
             {{ ans }}
           </li>
         </ul>
@@ -33,6 +36,7 @@
 
     <hr />
 
+    <!-- first / prev / next / last  -->
     <!-- <div class="text-center">
       <button class="btn btn-outline-dark m-1" (click)="firstPage()">
         First
@@ -55,7 +59,7 @@
             class="page-link"
             [class.disabled]="currentPage === 1"
             (click)="prevPage()"
-            >previous</a
+            >prev</a
           >
         </li>
         <li

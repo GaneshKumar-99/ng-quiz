@@ -120,7 +120,7 @@ export class AppComponent implements OnInit {
   currentPage = 1;
   totalpages = this.questions.length;
   timer: any;
-  defaultTime: number = 10;
+  defaultTime: number = 60;
   selectedAnswer: { [key: number]: string } = {};
 
   // currentPage = 1;
@@ -155,14 +155,15 @@ export class AppComponent implements OnInit {
         this.defaultTime--;
       } else {
         clearInterval(this.timer);
-        alert('Time is up, Click "NEXT" to move to the next question');
+        // alert('Time is up, Click "NEXT" to move to the next question');
+        return
       }
     }, 1000);
   }
 
   resetTimer() {
     clearInterval(this.timer);
-    this.defaultTime = 10;
+    this.defaultTime = 60;
     this.startTimer();
   }
 
@@ -180,9 +181,11 @@ export class AppComponent implements OnInit {
 
   nextPage() {
     console.log(
-      `Q${this.currentPage}:`,
-      this.selectedAnswer[this.currentPage] || 'no answer selected'
+      `Q${this.currentPage}:`, this.selectedAnswer[this.currentPage] || 'no answer selected'
     );
+    // console.log(
+    //   `Q${this.currentPage}:`, this.questions[this.currentPage - 1].answer || 'no answer selected'
+    // );
 
     if (this.currentPage < this.totalpages) {
       this.currentPage++;
@@ -190,15 +193,16 @@ export class AppComponent implements OnInit {
     }
   }
 
-  firstPage() {
-    this.currentPage = 1;
-    this.resetTimer();
-  }
+  // first / last page 
+  // firstPage() {
+  //   this.currentPage = 1;
+  //   this.resetTimer();
+  // }
 
-  lastPage() {
-    this.currentPage = this.totalpages;
-    this.resetTimer();
-  }
+  // lastPage() {
+  //   this.currentPage = this.totalpages;
+  //   this.resetTimer();
+  // }
 
   ngOnDestroy() {
     clearInterval(this.timer);
